@@ -1,4 +1,4 @@
-# My personal learning diary(or learning notes) about sensor fusion course in Udacity. 
+# My personal learning diary(or learning notes) about Perception and sensor fusion 
 Some of the notes are based on the this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
 
 my_project.md: About the projects.
