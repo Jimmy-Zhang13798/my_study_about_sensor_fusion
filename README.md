@@ -23,7 +23,13 @@ I recorded the detailed knowledges that I learned, into these 4 markdown files:
 
 And for the code and project parts, there are four folders, just check them. I finished my code and added more detailed comments into the officail code.
 
+[projects of Lidar ](./Lidar)
 
+[projects of Camera ](./Camera)  
+
+[projects of Radar ](./Radar)  
+
+[projects of Sensor fusion ](./Sensor_fusion)  
 
 ## Basic introduction
 
