@@ -1,109 +1,69 @@
-# My personal learning diary(or learning notes) about Perception and sensor fusion 
+# My personal learning notes diary about sensor fusion 
+
+### -- a learning diary for udacity sensor fusion course
 Some of the notes are based on the this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
 
-my_project.md: About the projects.
+lecture notes: you can check this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
 
-lecture notes: lecture notes from this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
 
+I recorded the detailed knowledges that I learned, into these 4 markdown files:
+
+
+
+[Notes of Lidar ](01Lidar.md)
+[Notes of Camera ](02Camera.md)
+[Notes of Radar ](03Radar.md)
+[Notes of Sensor fusion ](04Sensor_fusion.md)
+
+
+
+And for the code and project parts, there are four folders, just check them. I finished my code and added more detailed comments into the officail code.
 
 
 
 ## Basic introduction
 
-All sensors have their own different types of strengths and weeknesses. Here are some of them: Lidar, Camera, Radar, GNSS, IMU, Speedometer, Odometer, Laser range finders,Thermal cameras, Ultrasonic
+All sensors have their own different types of strengths and weeknesses. And Lidar, Radar,Camera,are the three most impotant ones for self driving.
 
+Before doing sensor fusion, we need to know how to process raw lidar/radar/camera data separately. Then we will learn sensor fusion.
 
-Here are the three most impotant ones for self driving.
+So ,we have four parts in this learning diary
 
-
-1. Lidar
-2. Radar
-3. Camera
-
-
-
-
-
-
-Before doing sensor fusion, we need to know how to process raw lidar/radar/camera data separately.
-
-## Lidar
+- #### Lidar
+- #### Camera
+- #### Radar
+- #### Sensor fusion
 
 
 
-### I. Lidar Sensors
-well known brand: Velodyne
+<br/><br/>
+## To sum up, this is what I learned
+
+#### Lidar
 
 
-![Velodyne HDL 64 Lidar](./media/velodyne-hdl-64-lidar.png)
-
-- Rotating lidars: rotating sensors to have a 360-degree of the environment
-- Reflecting lidars: using mirrors to scan the laser beams
-- Solid-state lidars: using phased array type of principle
-
-- Mount position
-    * rooftop: farthest field of view
-    * Also front, back and side: coverage for the blindspot of rooftop lidars
-
-- Resolution
-    * more layers of laser in the vertical field of view, to avoid an object hiding between the gap of two layers
+1. Learn the basic logic of Liadr  and build a simulated lidar and environment, to get pointcloud to help me understand  pointcloud better.
+2. Segmentation:
+    - follow the teacher's instruction  to use the the RANSAC from PCL library to segment planes.
+    - understand and write my own RANSAC algorithm, and run it successfully.
+3. Clustering Obstacles:
+    - follow the teacher's instruction to use the the KD_tree , Euclidean Clustering algorithm from PCL library to cluster obstacles.
+    - understand and write my own KD_tree and Euclidean Clustering algorithm, and run it successfully to cluster obstacles.
+4. Other stuff:
+    - Get more familiar with PCL library,like downsampling, Voxel grid filtering,Region of interest (ROI) filtering, stream PCD, add bounding boxes around the clusters, etc
+    - download real PCD files to play and try my own algorithm, and see a lot of difference in real situation.
 
 
-##### Question:
-VLP Sensor Specifications: 
-![Velodyne HDL 64 Lidar](./media/vlp-sensor-specs.png)
+#### Camera
 
-How many Lidar Points?:Approximately how many points does an HDL 64 collect every second given these specs? Assume an average update rate of 10Hz.
+please wait, it will come soon
 
-##### Answer:
+#### Radar
 
-$360/0.08\times64\times 10=2880000$
+please wait, it will come soon
 
+#### Sensor fusion
 
-
-### II. Point Clouds
-
-#### 1. Point Clouds
-A point cloud is a set of all lidar reflection points measured. Each point is one laser beam reflected from an object.
+please wait, it will come soon
 
 
-#### 2. Point Clouds Data file
-![PCD of a City Block](./media/pcd-of-a-block.png "PCD of a city block with parked cars, and a passing van. Intensity values are being shown as different colors. The big black spot is where the car with the lidar sensor is located.")
-
-PCD of a city block with parked cars, and a passing van. Intensity values are being shown as different colors. The big black spot is where the car with the lidar sensor is located.
-
-
-<br/>
-
-- A PCD file contains a list of Point Cloud Data, with every point in the format of `(x, y, z, I)`
-    * `(x, y, z)` is the Cartesian coordinates, telling us the location of the reflected surface on the object. And this coordinate system is right-handed .
-        + `x` pointing towards the front of the car
-        + `y` pointing to the left of the car
-        + `z` pointing to the vertical up above the car
-    * `I` is the signal strength of the laser related to the reflective properties of the material
-
-![PCD Coordinates](./media/pcd-coordinates.png)
-
-
-
-##### Question:
-While scanning with a VLP 64, a laser signal from the top layer takes 66.7 ns to be emitted and received again. The laser is emitted at a -24.8 degree incline from the X axis and horizontally travels along the X axis. Knowing that the speed of light is 299792458 m/s, what would be the coordinates of this laser point (X,Y,Z) in meters?
-##### Answer:
-$(9.08, 0, -4.19)$ Will explain the calculation later.
-
-
-#### 3. Point Cloud Library (PCL) 
-Point Cloud Library (PCL) is an open source library for processing the PCD file. It helps doing filtering, segmentation, and clustering of point clouds, rendering work, etc. Some documentation for PCL can be found [HERE](https://pointclouds.org/).
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-
-
-## Camera
-## Radar
-
-
-
-In Sensor Fusion, by combining lidar's high resolution imaging with radar's ability to measure velocity of objects we can get a better understanding of the surrounding environment than we could using one of the sensors alone.
