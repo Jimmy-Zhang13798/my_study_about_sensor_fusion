@@ -2,7 +2,7 @@
 
 ### -- a learning diary for udacity sensor fusion course
 
-First of all, please check this course from [Udacity](https://www.udacity.com/course/sensor-fusion-engineer-nanodegree--nd313). It's the best online course I've ever took.
+First of all, please check this course from [Udacity](https://www.udacity.com/course/sensor-fusion-engineer-nanodegree--nd313). It's the best online course I've ever taken.
 
 Some of the notes are based on the this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
 
@@ -63,7 +63,7 @@ So ,we have four parts in this learning diary
     - follow the teacher's instruction to use the the KD_tree , Euclidean Clustering algorithm from PCL library to cluster obstacles.
     - understand and write my own KD_tree and Euclidean Clustering algorithm, and run it successfully to cluster obstacles.
 4. Other stuff:
-    - Get more familiar with PCL library,like downsampling, Voxel grid filtering,Region of interest (ROI) filtering, stream PCD, add bounding boxes around the clusters, etc
+    - Get more familiar with PCL library,like downsampling, Voxel grid filtering, Region of interest (ROI) filtering, stream PCD, add bounding boxes around the clusters, etc
     - download real PCD files to play and try my own algorithm, and see a lot of difference in real situation.
 
 
