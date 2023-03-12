@@ -1,6 +1,9 @@
 # My personal learning notes diary about sensor fusion 
 
 ### -- a learning diary for udacity sensor fusion course
+
+First of all, please check this course from [Udacity](https://www.udacity.com/course/sensor-fusion-engineer-nanodegree--nd313). It's the best online course I've ever took.
+
 Some of the notes are based on the this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
 
 lecture notes: you can check this [repo](https://github.com/fanweng/Udacity-Sensor-Fusion-Nanodegree).
